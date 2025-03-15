@@ -42,12 +42,13 @@ export const StoreModal = () => {
       const response = await axios.post("/api/stores", values);
       console.log(response.data);
       toast.success("Berhasil membuat toko");
-      // window.location.assign(`/${response.data.id}`);
+      window.location.assign(`/${response.data.id}`);
     } catch (error) {
       toast.error("Gagal Membuat Toko");
     } finally {
       setLoading(false);
     }
+    
   };
 
   return (

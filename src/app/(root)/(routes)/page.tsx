@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 import { useStoreModal } from "@/hooks/use-store-modal";
+import { UserButton } from "@clerk/nextjs";
 
 const SetupPage = () => {
   const onOpen = useStoreModal((state) => state.onOpen);
@@ -14,7 +15,12 @@ const SetupPage = () => {
     }
   }, [isOpen, onOpen]);
 
-  return null;
+  return (
+    <div className="p-4">
+      Root Page
+      <UserButton afterSignOutUrl="/"/>
+    </div>
+  )
 };
 
 export default SetupPage;
